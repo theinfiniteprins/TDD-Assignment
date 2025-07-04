@@ -11,6 +11,10 @@ function add(numbers) {
 
     const nums = numbers.split(delimiter).map(Number);
 
+    nums.forEach(element => {
+        if(element<0)throw new Error(`negative numbers not allowed ${element}`);
+    });
+
     return nums.reduce((sum,current) => sum += current,0);
  }  
 
