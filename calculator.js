@@ -9,12 +9,14 @@ function add(numbers) {
         numbers = parts[1];
     }
 
-    const nums = numbers.split(delimiter).map(Number);
+    let nums = numbers.split(delimiter).map(Number);
 
     const negatives = nums.filter(num => num < 0);
     if (negatives.length > 0) {
         throw new Error(`negative numbers not allowed ${negatives.join(',')}`);
     }
+
+    nums = nums.filter(num => num<=1000);
 
     return nums.reduce((sum,current) => sum += current,0);
  }  
