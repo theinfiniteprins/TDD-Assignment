@@ -1,20 +1,17 @@
 function add(numbers) {
     if(numbers === "")return 0;
 
-    let List_of_numbers = numbers.split(/,|\n/).map(Number);
+    let delimiter = /,|\n/; // default delimiters: comma or newline
 
     if (numbers.startsWith("//")) {
         const parts = numbers.split('\n');
         delimiter = new RegExp(parts[0].substring(2));
         numbers = parts[1];
-        List_of_numbers = numbers.split(delimiter).map(Number);
     }
 
-    let sum = 0;
-    List_of_numbers.forEach(element => {
-        sum += element;
-    });
-    return sum;
+    const nums = numbers.split(delimiter).map(Number);
+
+    return nums.reduce((sum,current) => sum += current,0);
  }  
 
 module.exports = { add };
