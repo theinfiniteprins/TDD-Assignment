@@ -5,7 +5,9 @@ function add(numbers) {
 
     if (numbers.startsWith("//")) {
         const parts = numbers.split('\n');
-        delimiter = new RegExp(parts[0].substring(2));
+        delimiter = parts[0].substring(2);
+        if (delimiter.startsWith("[") && delimiter.endsWith("]")) {delimiter = delimiter.slice(1, -1);}
+        delimiter = new RegExp(delimiter);
         numbers = parts[1];
     }
 

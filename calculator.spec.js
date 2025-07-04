@@ -41,3 +41,7 @@ test('numbers bigger than 1000 should be ignored', () => {
     expect(add("1,2,1002,4")).toBe(7);
     expect(add("5,5250,3500,5")).toBe(10);
 });
+
+test('should handle delimiters with any length', () =>{
+    expect(add("//[DDU]\n1DDU2DDU3")).toBe(6);
+});
