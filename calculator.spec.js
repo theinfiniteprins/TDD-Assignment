@@ -34,5 +34,5 @@ test('should throw error for negative a number', () => {
 });
 
 test('should throw error for negative numbers', () => {
-    expect(() => add("//;\n1;-2;3;-4")).toThrow("negative numbers not allowed -2 -4");
+    expect(() => add("//;\n1;-2;3;-4")).toThrow("negative numbers not allowed -2,-4");
 });
